@@ -2,7 +2,18 @@
   text-align: center;
 }
 
-.App-logo {
+.App-logo1 {
+  background-color: #0e189c;
+  height: 20vmin;
+}
+
+.App-logo2 {
+  background-color: #aa0f0f;
+  height: 40vmin;
+}
+
+.Wolf-logo1 {
+  background-color: #282c34;
   height: 40vmin;
 }
 
