@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"> </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>My First Chart.js</title>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        //Global Options
+        Chart.defaults.global.defaultFontFamily = 'hel';
+        Chart.defaults.global.defaultFontsize = 18;
+        Chart.defaults.global.defaultFontColor = 'green';
+
+        let massPopChart = new Chart(myChart, {
+            type: 'pie', //bar, horizontalBar, pie, line, doughnut, radar, polarArea, scatter
+            data: {
+                labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+                datasets: [{
+                    label: 'Population',
+                    data: [
+                        617594,
+                        181045,
+                        500351,
+                        106519,
+                        305162,
+                        95072
+                    ],
+                    //backgroundColor: 'purple'
+                    backgroundColor: [
+                        'rgb(0, 51, 204)',
+                        'rgb(0, 102, 255)',
+                        'rgb(153, 204, 255)',
+                        'rgb(255, 204, 255)',
+                        'rgb(255, 204, 153)',
+                        'rgb(204, 255, 102)'
+                    ],
+                    borderWidth: 4,
+                    borderColor: 'grey',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: 'red'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'LARGEST CITIES IN MASSACHUSETTS',
+                    fontSize: 25,
+                    fontColor: 'black'
+                },
+                legend: {
+                    display: true,
+                    position: 'right',//top,bottom,left
+                    labels: {
+                        fontColor: 'green'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
